@@ -1,0 +1,33 @@
+{
+  "drop_bad_key_rows": 0,
+  "drop_duplicate_key_rows": 0,
+  "bad_price_rows": 102,
+  "negative_volume_rows": 0,
+  "input_rows": 271405,
+  "clean_rows": 271405,
+  "return_outlier_rows": 29,
+  "stale_rows": 708,
+  "calendar_days": 2766,
+  "aligned_rows": 276600,
+  "added_rows_by_align": 5195,
+  "missing_price_rows_after_align": 5230,
+  "synthetic_rows_after_align": 0,
+  "tradable_rows_after_align": 267598,
+  "tradable_ratio_vs_observed": 0.9859729923914445,
+  "liquid_rows_after_align": 267726,
+  "missing_type_counts": {
+    "observed_ok": 271303,
+    "pre_listing": 5195,
+    "observed_bad_price": 102
+  },
+  "in_life_gap_unfilled_rows": 0,
+  "anomalies_exported_rows": 839,
+  "paths": {
+    "input_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel.parquet",
+    "clean_output_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel_cleaned.parquet",
+    "aligned_output_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel_aligned.parquet",
+    "tradable_output_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel_tradable.parquet",
+    "anomalies_output_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel_anomalies.csv"
+  },
+  "output_path": "/mnt/d/MyQuant/MyQuant/data/data/processed/panel_aligned.parquet"
+}

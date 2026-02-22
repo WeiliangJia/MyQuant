@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "checks": {
+    "bad_price_rate_ok": true,
+    "negative_volume_rate_ok": true,
+    "in_life_gap_unfilled_ok": true,
+    "tradable_ratio_ok": true
+  },
+  "thresholds": {
+    "max_bad_price_rate": 0.002,
+    "max_negative_volume_rate": 0.0001,
+    "max_in_life_gap_unfilled_rows": 1000,
+    "min_tradable_ratio": 0.9
+  },
+  "metrics": {
+    "bad_price_rate": 0.00037582211086752273,
+    "negative_volume_rate": 0.0,
+    "in_life_gap_unfilled_rows": 0,
+    "tradable_ratio_vs_observed": 0.9859729923914445
+  }
+}
