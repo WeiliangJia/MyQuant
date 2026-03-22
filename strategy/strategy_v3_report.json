@@ -1,0 +1,115 @@
+{
+  "parameters": {
+    "forward_days": 5,
+    "train_years": 2,
+    "rebalance_days": 10,
+    "top_k": 20,
+    "sell_threshold": 30,
+    "holding_bonus": 0.002,
+    "n_features": 21,
+    "features_used": [
+      "return_1d_zscore",
+      "momentum_5d_zscore",
+      "momentum_20d_zscore",
+      "momentum_60d_zscore",
+      "high_52w_dist_zscore",
+      "volatility_20d_zscore",
+      "vol_ratio_20_60_zscore",
+      "intraday_range_zscore",
+      "volume_ratio_20d_zscore",
+      "volume_std_20d_zscore",
+      "price_volume_corr_20d_zscore",
+      "rsi_14_zscore",
+      "ma_deviation_20d_zscore",
+      "macd_signal_zscore",
+      "atr_14_pct_zscore",
+      "close_position_zscore",
+      "gap_open_zscore",
+      "amihud_illiq_20d_zscore",
+      "return_skew_20d_zscore",
+      "return_kurt_20d_zscore",
+      "downside_vol_20d_zscore"
+    ],
+    "lgb_params": {
+      "objective": "regression",
+      "metric": "mse",
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": 6,
+      "min_child_samples": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "verbose": -1,
+      "n_estimators": 300,
+      "early_stopping_rounds": 30
+    },
+    "turnover_control": {
+      "holding_bonus": 0.002,
+      "sell_threshold": 30,
+      "rebalance_days": 10
+    }
+  },
+  "results": {
+    "Ridge": {
+      "model": "Ridge",
+      "total_return": 0.6806,
+      "annual_return": 0.0681,
+      "annual_volatility": 0.0655,
+      "sharpe_ratio": 1.0386,
+      "max_drawdown": -0.3092,
+      "win_rate": 0.54,
+      "mean_ic": 0.0238,
+      "ic_ir": 0.0766,
+      "trading_days": 1987
+    },
+    "LightGBM": {
+      "model": "LightGBM",
+      "total_return": 0.5074,
+      "annual_return": 0.0534,
+      "annual_volatility": 0.053,
+      "sharpe_ratio": 1.0074,
+      "max_drawdown": -0.2196,
+      "win_rate": 0.5224,
+      "mean_ic": 0.0316,
+      "ic_ir": 0.0933,
+      "trading_days": 1987
+    }
+  },
+  "turnover_stats": {
+    "Ridge": {
+      "n_rebalances": 199,
+      "avg_sold_per_rebalance": 3.52,
+      "avg_turnover_pct": 0.1784
+    },
+    "LightGBM": {
+      "n_rebalances": 199,
+      "avg_sold_per_rebalance": 2.43,
+      "avg_turnover_pct": 0.1239
+    }
+  },
+  "feature_importance_lgb": {
+    "amihud_illiq_20d_zscore": 2.9,
+    "momentum_60d_zscore": 2.71,
+    "high_52w_dist_zscore": 2.36,
+    "vol_ratio_20_60_zscore": 2.34,
+    "intraday_range_zscore": 2.01,
+    "volume_std_20d_zscore": 1.9,
+    "return_kurt_20d_zscore": 1.89,
+    "macd_signal_zscore": 1.69,
+    "downside_vol_20d_zscore": 1.4,
+    "momentum_20d_zscore": 1.35,
+    "price_volume_corr_20d_zscore": 1.32,
+    "volatility_20d_zscore": 1.26,
+    "atr_14_pct_zscore": 1.23,
+    "return_skew_20d_zscore": 1.09,
+    "momentum_5d_zscore": 0.95,
+    "ma_deviation_20d_zscore": 0.89,
+    "rsi_14_zscore": 0.77,
+    "volume_ratio_20d_zscore": 0.29,
+    "return_1d_zscore": 0.21,
+    "close_position_zscore": 0.15,
+    "gap_open_zscore": 0.14
+  }
+}
