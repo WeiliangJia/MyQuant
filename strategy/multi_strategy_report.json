@@ -1,0 +1,100 @@
+{
+  "individual_strategies": {
+    "A_ML": {
+      "name": "A_ML",
+      "annual_return": 0.1415,
+      "annual_vol": 0.051,
+      "sharpe": 2.7759,
+      "max_drawdown": -0.158,
+      "win_rate": 0.5664,
+      "trading_days": 1928
+    },
+    "B_Reversal": {
+      "name": "B_Reversal",
+      "annual_return": 0.0755,
+      "annual_vol": 0.0622,
+      "sharpe": 1.2137,
+      "max_drawdown": -0.1769,
+      "win_rate": 0.5368,
+      "trading_days": 1928
+    },
+    "C_Momentum": {
+      "name": "C_Momentum",
+      "annual_return": 0.0625,
+      "annual_vol": 0.052,
+      "sharpe": 1.2005,
+      "max_drawdown": -0.1878,
+      "win_rate": 0.5368,
+      "trading_days": 1928
+    },
+    "D_LowVol": {
+      "name": "D_LowVol",
+      "annual_return": -0.0098,
+      "annual_vol": 0.048,
+      "sharpe": -0.2038,
+      "max_drawdown": -0.2674,
+      "win_rate": 0.4876,
+      "trading_days": 1928
+    }
+  },
+  "correlation_matrix": {
+    "A_ML": {
+      "A_ML": 1.0,
+      "B_Reversal": 0.2701,
+      "C_Momentum": 0.2706,
+      "D_LowVol": -0.1071
+    },
+    "B_Reversal": {
+      "A_ML": 0.2701,
+      "B_Reversal": 1.0,
+      "C_Momentum": 0.0241,
+      "D_LowVol": -0.1186
+    },
+    "C_Momentum": {
+      "A_ML": 0.2706,
+      "B_Reversal": 0.0241,
+      "C_Momentum": 1.0,
+      "D_LowVol": 0.2919
+    },
+    "D_LowVol": {
+      "A_ML": -0.1071,
+      "B_Reversal": -0.1186,
+      "C_Momentum": 0.2919,
+      "D_LowVol": 1.0
+    }
+  },
+  "combination_weights": {
+    "equal": {
+      "A_ML": 0.25,
+      "B_Reversal": 0.25,
+      "C_Momentum": 0.25,
+      "D_LowVol": 0.25
+    },
+    "sharpe_weighted": {
+      "A_ML": 0.5338,
+      "B_Reversal": 0.2334,
+      "C_Momentum": 0.2309,
+      "D_LowVol": 0.0019
+    }
+  },
+  "combined_results": {
+    "equal_weight": {
+      "name": "Combined_EqualWeight",
+      "annual_return": 0.0671,
+      "annual_vol": 0.0306,
+      "sharpe": 2.1908,
+      "max_drawdown": -0.0773,
+      "win_rate": 0.5628,
+      "trading_days": 1928
+    },
+    "sharpe_weight": {
+      "name": "Combined_SharpeWeight",
+      "annual_return": 0.1077,
+      "annual_vol": 0.0387,
+      "sharpe": 2.7873,
+      "max_drawdown": -0.0976,
+      "win_rate": 0.5752,
+      "trading_days": 1928
+    }
+  }
+}
