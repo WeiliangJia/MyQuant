@@ -63,7 +63,14 @@ def load_data():
 def run_backtest_with_risk(holdings, prices, spy):
     print("Running backtest with risk controls ...")
 
-    price_map = prices.set_index(["Date", "ticker"])[["Open", "Close"]]
+    # 构建快速查找字典（比 .loc 快很多）
+    open_dict = {}
+    close_dict = {}
+    for _, row in prices.iterrows():
+        key = (row["Date"], row["ticker"])
+        open_dict[key] = row["Open"]
+        close_dict[key] = row["Close"]
+
     all_dates = sorted(prices["Date"].unique())
     bt_start = holdings["Date"].min()
     bt_end = holdings["Date"].max()
@@ -71,7 +78,10 @@ def run_backtest_with_risk(holdings, prices, spy):
 
     rebalance_dates = sorted(holdings["Date"].unique())[::REBALANCE_DAYS]
     rebalance_set = set(rebalance_dates)
-    holdings_by_date = holdings.groupby("Date")
+    holdings_by_date = {
+        date: grp.set_index("ticker")["weight"].to_dict()
+        for date, grp in holdings.groupby("Date")
+    }
 
     # 初始化
     rm = RiskManager()
@@ -84,39 +94,37 @@ def run_backtest_with_risk(holdings, prices, spy):
     prev_nav = INITIAL_CAPITAL
 
     for i, date in enumerate(trade_dates):
+        if i % 500 == 0:
+            print(f"  Day {i}/{len(trade_dates)} ...")
+
         is_rebalance = date in rebalance_set
 
         # 日初估值
         port_value_open = cash
         for tkr, shares in positions.items():
-            try:
-                opn = price_map.loc[(date, tkr), "Open"]
+            opn = open_dict.get((date, tkr))
+            if opn is not None:
                 port_value_open += shares * opn
-            except KeyError:
-                pass
 
-        if is_rebalance and date in holdings_by_date.groups:
+        if is_rebalance and date in holdings_by_date:
             # ── 风控计算 ──
             scale, risk_detail = rm.compute_position_scale(port_value_open, date=date)
 
             # 原始目标权重
-            raw_weights = holdings_by_date.get_group(date).set_index("ticker")["weight"].to_dict()
+            raw_weights = holdings_by_date[date]
 
             # 行业集中度限制
             adjusted_weights = RiskManager.apply_sector_limit(raw_weights)
 
-            # 波动率 + 回撤缩放：所有权重乘以 scale
+            # 波动率 + 回撤缩放
             scaled_weights = {tkr: w * scale for tkr, w in adjusted_weights.items()}
 
             # 目标持仓股数
             target_positions: dict[str, float] = {}
             for tkr, w in scaled_weights.items():
-                try:
-                    opn = price_map.loc[(date, tkr), "Open"]
-                    if opn > 0:
-                        target_positions[tkr] = (port_value_open * w) / opn
-                except KeyError:
-                    pass
+                opn = open_dict.get((date, tkr))
+                if opn is not None and opn > 0:
+                    target_positions[tkr] = (port_value_open * w) / opn
 
             # 交易执行
             all_tickers = set(list(positions.keys()) + list(target_positions.keys()))
@@ -130,9 +138,8 @@ def run_backtest_with_risk(holdings, prices, spy):
                 if abs(delta_shares) < 1e-6:
                     continue
 
-                try:
-                    opn = price_map.loc[(date, tkr), "Open"]
-                except KeyError:
+                opn = open_dict.get((date, tkr))
+                if opn is None:
                     continue
 
                 trade_value = abs(delta_shares) * opn
@@ -149,11 +156,9 @@ def run_backtest_with_risk(holdings, prices, spy):
         # ── 日终估值 ──
         port_value_eod = cash
         for tkr, shares in positions.items():
-            try:
-                cls = price_map.loc[(date, tkr), "Close"]
+            cls = close_dict.get((date, tkr))
+            if cls is not None:
                 port_value_eod += shares * cls
-            except KeyError:
-                pass
 
         # 更新风控状态
         daily_ret = (port_value_eod - prev_nav) / prev_nav if prev_nav > 0 else 0.0
