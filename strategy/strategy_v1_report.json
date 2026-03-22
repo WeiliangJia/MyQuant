@@ -1,0 +1,57 @@
+{
+  "parameters": {
+    "forward_days": 5,
+    "train_years": 2,
+    "rebalance_days": 5,
+    "top_k": 20,
+    "features": [
+      "return_1d_zscore",
+      "momentum_20d_zscore",
+      "volatility_20d_zscore",
+      "volume_ratio_20d_zscore",
+      "rsi_14_zscore",
+      "ma_deviation_20d_zscore"
+    ],
+    "lgb_params": {
+      "objective": "regression",
+      "metric": "mse",
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": 6,
+      "min_child_samples": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "verbose": -1,
+      "n_estimators": 300,
+      "early_stopping_rounds": 30
+    }
+  },
+  "results": {
+    "Ridge": {
+      "model": "Ridge",
+      "total_return": 0.7326,
+      "annual_return": 0.0644,
+      "annual_volatility": 0.0604,
+      "sharpe_ratio": 1.0676,
+      "max_drawdown": -0.3201,
+      "win_rate": 0.5388,
+      "mean_ic": 0.0251,
+      "ic_ir": 0.0827,
+      "trading_days": 2218
+    },
+    "LightGBM": {
+      "model": "LightGBM",
+      "total_return": 0.3118,
+      "annual_return": 0.0313,
+      "annual_volatility": 0.0448,
+      "sharpe_ratio": 0.6996,
+      "max_drawdown": -0.1744,
+      "win_rate": 0.5239,
+      "mean_ic": 0.0102,
+      "ic_ir": 0.0321,
+      "trading_days": 2218
+    }
+  }
+}
