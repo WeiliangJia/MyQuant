@@ -1,0 +1,18 @@
+# 数据文件（可通过脚本重新生成）
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
