@@ -1,0 +1,375 @@
+{
+  "rows_before_dropna": 267598,
+  "rows_after_dropna": 242496,
+  "dropped_warmup_rows": 25102,
+  "output_rows": 242496,
+  "output_cols": 53,
+  "tickers": 100,
+  "date_range": [
+    "2016-01-29 00:00:00",
+    "2025-12-31 00:00:00"
+  ],
+  "raw_factors": [
+    "return_1d",
+    "momentum_5d",
+    "momentum_20d",
+    "momentum_60d",
+    "return_5d_reversal",
+    "high_52w_dist",
+    "volatility_20d",
+    "volatility_60d",
+    "vol_ratio_20_60",
+    "intraday_range",
+    "volume_ratio_20d",
+    "volume_ratio_5d",
+    "volume_std_20d",
+    "price_volume_corr_20d",
+    "rsi_14",
+    "ma_deviation_20d",
+    "macd_signal",
+    "bollinger_pos",
+    "atr_14_pct",
+    "close_position",
+    "gap_open",
+    "amihud_illiq_20d",
+    "return_skew_20d",
+    "return_kurt_20d",
+    "downside_vol_20d"
+  ],
+  "zscore_factors": [
+    "return_1d_zscore",
+    "momentum_5d_zscore",
+    "momentum_20d_zscore",
+    "momentum_60d_zscore",
+    "return_5d_reversal_zscore",
+    "high_52w_dist_zscore",
+    "volatility_20d_zscore",
+    "volatility_60d_zscore",
+    "vol_ratio_20_60_zscore",
+    "intraday_range_zscore",
+    "volume_ratio_20d_zscore",
+    "volume_ratio_5d_zscore",
+    "volume_std_20d_zscore",
+    "price_volume_corr_20d_zscore",
+    "rsi_14_zscore",
+    "ma_deviation_20d_zscore",
+    "macd_signal_zscore",
+    "bollinger_pos_zscore",
+    "atr_14_pct_zscore",
+    "close_position_zscore",
+    "gap_open_zscore",
+    "amihud_illiq_20d_zscore",
+    "return_skew_20d_zscore",
+    "return_kurt_20d_zscore",
+    "downside_vol_20d_zscore"
+  ],
+  "factor_categories": {
+    "momentum_reversal": [
+      "return_1d",
+      "momentum_5d",
+      "momentum_20d",
+      "momentum_60d",
+      "return_5d_reversal",
+      "high_52w_dist"
+    ],
+    "volatility": [
+      "volatility_20d",
+      "volatility_60d",
+      "vol_ratio_20_60",
+      "intraday_range"
+    ],
+    "volume_price": [
+      "volume_ratio_20d",
+      "volume_ratio_5d",
+      "volume_std_20d",
+      "price_volume_corr_20d"
+    ],
+    "technical": [
+      "rsi_14",
+      "ma_deviation_20d",
+      "macd_signal",
+      "bollinger_pos",
+      "atr_14_pct"
+    ],
+    "microstructure": [
+      "close_position",
+      "gap_open",
+      "amihud_illiq_20d"
+    ],
+    "higher_order_stats": [
+      "return_skew_20d",
+      "return_kurt_20d",
+      "downside_vol_20d"
+    ]
+  },
+  "factor_stats": {
+    "return_1d": {
+      "mean": 0.000775,
+      "std": 0.02134,
+      "min": -0.485017,
+      "max": 0.746089,
+      "nan_rate": 0.0
+    },
+    "momentum_5d": {
+      "mean": 0.003842,
+      "std": 0.046826,
+      "min": -0.784541,
+      "max": 1.223077,
+      "nan_rate": 0.0
+    },
+    "momentum_20d": {
+      "mean": 0.015057,
+      "std": 0.0928,
+      "min": -0.849195,
+      "max": 2.263352,
+      "nan_rate": 0.0
+    },
+    "momentum_60d": {
+      "mean": 0.043467,
+      "std": 0.165031,
+      "min": -0.880558,
+      "max": 6.333804,
+      "nan_rate": 0.0
+    },
+    "return_5d_reversal": {
+      "mean": -0.003842,
+      "std": 0.046826,
+      "min": -1.223077,
+      "max": 0.784541,
+      "nan_rate": 0.0
+    },
+    "high_52w_dist": {
+      "mean": -0.130009,
+      "std": 0.126561,
+      "min": -0.984868,
+      "max": 0.0,
+      "nan_rate": 0.0
+    },
+    "volatility_20d": {
+      "mean": 0.018018,
+      "std": 0.011602,
+      "min": 0.002915,
+      "max": 0.215893,
+      "nan_rate": 0.0
+    },
+    "volatility_60d": {
+      "mean": 0.018704,
+      "std": 0.010432,
+      "min": 0.004375,
+      "max": 0.150462,
+      "nan_rate": 0.0
+    },
+    "vol_ratio_20_60": {
+      "mean": 0.969494,
+      "std": 0.249295,
+      "min": 0.160828,
+      "max": 1.740021,
+      "nan_rate": 0.0
+    },
+    "intraday_range": {
+      "mean": 0.023806,
+      "std": 0.01222,
+      "min": 0.007232,
+      "max": 0.200697,
+      "nan_rate": 0.0
+    },
+    "volume_ratio_20d": {
+      "mean": 1.008717,
+      "std": 0.471547,
+      "min": 0.006328,
+      "max": 14.082305,
+      "nan_rate": 0.0
+    },
+    "volume_ratio_5d": {
+      "mean": 1.005035,
+      "std": 0.317234,
+      "min": 0.00947,
+      "max": 4.518454,
+      "nan_rate": 0.0
+    },
+    "volume_std_20d": {
+      "mean": 0.394464,
+      "std": 0.186391,
+      "min": 0.076464,
+      "max": 3.088002,
+      "nan_rate": 0.0
+    },
+    "price_volume_corr_20d": {
+      "mean": -0.015659,
+      "std": 0.35346,
+      "min": -0.989253,
+      "max": 0.980946,
+      "nan_rate": 0.0
+    },
+    "rsi_14": {
+      "mean": 53.3797,
+      "std": 16.449823,
+      "min": 3.429222,
+      "max": 97.831498,
+      "nan_rate": 0.0
+    },
+    "ma_deviation_20d": {
+      "mean": 0.005792,
+      "std": 0.050706,
+      "min": -0.791394,
+      "max": 1.093895,
+      "nan_rate": 0.0
+    },
+    "macd_signal": {
+      "mean": 3.6e-05,
+      "std": 0.007597,
+      "min": -0.486484,
+      "max": 0.148333,
+      "nan_rate": 0.0
+    },
+    "bollinger_pos": {
+      "mean": 0.1125,
+      "std": 0.646695,
+      "min": -2.094203,
+      "max": 2.077246,
+      "nan_rate": 0.0
+    },
+    "atr_14_pct": {
+      "mean": 0.025676,
+      "std": 0.014985,
+      "min": 0.006963,
+      "max": 0.634137,
+      "nan_rate": 0.0
+    },
+    "close_position": {
+      "mean": 0.518257,
+      "std": 0.302831,
+      "min": 0.0,
+      "max": 1.0,
+      "nan_rate": 0.0
+    },
+    "gap_open": {
+      "mean": 0.000474,
+      "std": 0.012873,
+      "min": -0.450725,
+      "max": 0.713864,
+      "nan_rate": 0.0
+    },
+    "amihud_illiq_20d": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "nan_rate": 0.0
+    },
+    "return_skew_20d": {
+      "mean": -0.044976,
+      "std": 0.960643,
+      "min": -4.326916,
+      "max": 4.286511,
+      "nan_rate": 0.0
+    },
+    "return_kurt_20d": {
+      "mean": 1.238697,
+      "std": 2.656937,
+      "min": -1.847986,
+      "max": 19.131619,
+      "nan_rate": 0.0
+    },
+    "downside_vol_20d": {
+      "mean": 0.010224,
+      "std": 0.007265,
+      "min": 0.000199,
+      "max": 0.14533,
+      "nan_rate": 0.0
+    }
+  },
+  "correlation_matrix": {},
+  "high_corr_pairs_above_0.7": [
+    {
+      "factor_1": "momentum_5d",
+      "factor_2": "return_5d_reversal",
+      "corr": -1.0
+    },
+    {
+      "factor_1": "momentum_5d",
+      "factor_2": "ma_deviation_20d",
+      "corr": 0.7526
+    },
+    {
+      "factor_1": "momentum_20d",
+      "factor_2": "ma_deviation_20d",
+      "corr": 0.8439
+    },
+    {
+      "factor_1": "return_5d_reversal",
+      "factor_2": "ma_deviation_20d",
+      "corr": -0.7526
+    },
+    {
+      "factor_1": "volatility_20d",
+      "factor_2": "volatility_60d",
+      "corr": 0.8269
+    },
+    {
+      "factor_1": "volatility_20d",
+      "factor_2": "intraday_range",
+      "corr": 0.9051
+    },
+    {
+      "factor_1": "volatility_20d",
+      "factor_2": "atr_14_pct",
+      "corr": 0.881
+    },
+    {
+      "factor_1": "volatility_20d",
+      "factor_2": "downside_vol_20d",
+      "corr": 0.8744
+    },
+    {
+      "factor_1": "volatility_60d",
+      "factor_2": "intraday_range",
+      "corr": 0.8449
+    },
+    {
+      "factor_1": "volatility_60d",
+      "factor_2": "atr_14_pct",
+      "corr": 0.7911
+    },
+    {
+      "factor_1": "intraday_range",
+      "factor_2": "atr_14_pct",
+      "corr": 0.9244
+    },
+    {
+      "factor_1": "intraday_range",
+      "factor_2": "downside_vol_20d",
+      "corr": 0.8079
+    },
+    {
+      "factor_1": "volume_ratio_20d",
+      "factor_2": "volume_ratio_5d",
+      "corr": 0.8004
+    },
+    {
+      "factor_1": "rsi_14",
+      "factor_2": "ma_deviation_20d",
+      "corr": 0.8244
+    },
+    {
+      "factor_1": "rsi_14",
+      "factor_2": "bollinger_pos",
+      "corr": 0.9424
+    },
+    {
+      "factor_1": "ma_deviation_20d",
+      "factor_2": "macd_signal",
+      "corr": 0.7915
+    },
+    {
+      "factor_1": "ma_deviation_20d",
+      "factor_2": "bollinger_pos",
+      "corr": 0.8017
+    },
+    {
+      "factor_1": "atr_14_pct",
+      "factor_2": "downside_vol_20d",
+      "corr": 0.8409
+    }
+  ]
+}
