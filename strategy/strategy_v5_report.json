@@ -1,0 +1,110 @@
+{
+  "version": "V5",
+  "removed_factors": [
+    "volume_std_20d_zscore (IC t_NW=-0.13)",
+    "amihud_illiq_20d_zscore (IC t_NW=+0.11)",
+    "return_kurt_20d_zscore (IC t_NW=+0.30)",
+    "return_skew_20d_zscore (IC t_NW=-0.48)"
+  ],
+  "parameters": {
+    "forward_days": 5,
+    "train_years": 2,
+    "rebalance_days": 10,
+    "top_k": 20,
+    "sell_threshold": 30,
+    "holding_bonus": 0.002,
+    "n_features_total": 25,
+    "n_stock_features": 17,
+    "n_cross_asset_features": 8,
+    "stock_features": [
+      "return_1d_zscore",
+      "momentum_5d_zscore",
+      "momentum_20d_zscore",
+      "momentum_60d_zscore",
+      "high_52w_dist_zscore",
+      "volatility_20d_zscore",
+      "vol_ratio_20_60_zscore",
+      "intraday_range_zscore",
+      "volume_ratio_20d_zscore",
+      "price_volume_corr_20d_zscore",
+      "rsi_14_zscore",
+      "ma_deviation_20d_zscore",
+      "macd_signal_zscore",
+      "atr_14_pct_zscore",
+      "close_position_zscore",
+      "gap_open_zscore",
+      "downside_vol_20d_zscore"
+    ],
+    "cross_asset_features": [
+      "vix_level_zscore",
+      "vix_change_5d_zscore",
+      "vix_term_structure_zscore",
+      "tnx_level_zscore",
+      "tnx_change_20d_zscore",
+      "tnx_momentum_60d_zscore",
+      "dxy_change_20d_zscore",
+      "dxy_momentum_60d_zscore"
+    ]
+  },
+  "results": {
+    "Ridge": {
+      "model": "Ridge",
+      "total_return": 0.4251,
+      "annual_return": 0.0474,
+      "annual_volatility": 0.0654,
+      "sharpe_ratio": 0.7246,
+      "max_drawdown": -0.3521,
+      "win_rate": 0.5332,
+      "mean_ic": 0.0279,
+      "ic_ir": 0.0904,
+      "trading_days": 1928,
+      "turnover": {
+        "n_rebalances": 193,
+        "avg_turnover_pct": 0.1876
+      }
+    },
+    "LightGBM": {
+      "model": "LightGBM",
+      "total_return": 1.495,
+      "annual_return": 0.1269,
+      "annual_volatility": 0.0588,
+      "sharpe_ratio": 2.1591,
+      "max_drawdown": -0.1849,
+      "win_rate": 0.5519,
+      "mean_ic": 0.0277,
+      "ic_ir": 0.0818,
+      "trading_days": 1928,
+      "turnover": {
+        "n_rebalances": 193,
+        "avg_turnover_pct": 0.3731
+      }
+    }
+  },
+  "feature_importance_lgb": {
+    "high_52w_dist_zscore": 10.74,
+    "intraday_range_zscore": 9.8,
+    "tnx_momentum_60d_zscore": 9.53,
+    "dxy_momentum_60d_zscore": 9.21,
+    "momentum_60d_zscore": 8.9,
+    "tnx_change_20d_zscore": 8.42,
+    "vix_level_zscore": 8.06,
+    "dxy_change_20d_zscore": 8.01,
+    "vix_term_structure_zscore": 7.83,
+    "tnx_level_zscore": 7.14,
+    "atr_14_pct_zscore": 6.73,
+    "vol_ratio_20_60_zscore": 6.59,
+    "downside_vol_20d_zscore": 6.09,
+    "momentum_20d_zscore": 5.56,
+    "volatility_20d_zscore": 5.52,
+    "macd_signal_zscore": 4.94,
+    "vix_change_5d_zscore": 4.92,
+    "price_volume_corr_20d_zscore": 4.66,
+    "momentum_5d_zscore": 4.21,
+    "ma_deviation_20d_zscore": 3.67,
+    "rsi_14_zscore": 3.39,
+    "volume_ratio_20d_zscore": 2.36,
+    "gap_open_zscore": 1.26,
+    "return_1d_zscore": 1.2,
+    "close_position_zscore": 0.93
+  }
+}

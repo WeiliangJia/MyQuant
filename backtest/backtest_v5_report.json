@@ -1,0 +1,208 @@
+{
+  "version": "V5",
+  "metrics": {
+    "backtest_period": "2018-04-25 ~ 2025-12-23",
+    "trading_days": 1928,
+    "years": 7.65,
+    "final_nav": 3405714.27,
+    "total_return": 2.4057,
+    "annual_return": 0.1737,
+    "annual_volatility": 0.1578,
+    "sharpe_ratio": 1.1006,
+    "sharpe_rf_4pct": 0.8472,
+    "sortino_ratio": 1.4965,
+    "calmar_ratio": 0.715,
+    "max_drawdown": -0.2429,
+    "win_rate": 0.5488,
+    "profit_loss_ratio": 0.9902,
+    "avg_invested_pct": 0.8086,
+    "benchmark_spy": {
+      "total_return": 1.945,
+      "annual_return": 0.1516,
+      "annual_volatility": 0.1948
+    },
+    "excess_vs_spy": {
+      "excess_annual_return": 0.0221,
+      "excess_annual_vol": 0.097,
+      "information_ratio": 0.2278
+    },
+    "costs": {
+      "total_cost_dollar": 363658.15,
+      "annual_cost_drag": 0.0475,
+      "annual_turnover": 47532082.0,
+      "n_rebalances": 386
+    }
+  },
+  "yearly": [
+    {
+      "year": 2018,
+      "return": 0.0021,
+      "volatility": 0.1496,
+      "sharpe": 0.0141,
+      "max_drawdown": -0.1836,
+      "spy_return": -0.0379,
+      "excess_return": 0.04,
+      "win_rate": 0.4971,
+      "trading_days": 173
+    },
+    {
+      "year": 2019,
+      "return": 0.2967,
+      "volatility": 0.1293,
+      "sharpe": 2.2939,
+      "max_drawdown": -0.0758,
+      "spy_return": 0.3122,
+      "excess_return": -0.0156,
+      "win_rate": 0.5794,
+      "trading_days": 252
+    },
+    {
+      "year": 2020,
+      "return": 0.1426,
+      "volatility": 0.2081,
+      "sharpe": 0.6854,
+      "max_drawdown": -0.2429,
+      "spy_return": 0.1833,
+      "excess_return": -0.0407,
+      "win_rate": 0.5573,
+      "trading_days": 253
+    },
+    {
+      "year": 2021,
+      "return": 0.3024,
+      "volatility": 0.1421,
+      "sharpe": 2.1274,
+      "max_drawdown": -0.0683,
+      "spy_return": 0.2873,
+      "excess_return": 0.0151,
+      "win_rate": 0.5714,
+      "trading_days": 252
+    },
+    {
+      "year": 2022,
+      "return": -0.1027,
+      "volatility": 0.1774,
+      "sharpe": -0.579,
+      "max_drawdown": -0.1615,
+      "spy_return": -0.1818,
+      "excess_return": 0.079,
+      "win_rate": 0.4821,
+      "trading_days": 251
+    },
+    {
+      "year": 2023,
+      "return": 0.3124,
+      "volatility": 0.1433,
+      "sharpe": 2.1799,
+      "max_drawdown": -0.1003,
+      "spy_return": 0.2618,
+      "excess_return": 0.0507,
+      "win_rate": 0.56,
+      "trading_days": 250
+    },
+    {
+      "year": 2024,
+      "return": 0.2658,
+      "volatility": 0.1425,
+      "sharpe": 1.8648,
+      "max_drawdown": -0.0651,
+      "spy_return": 0.2489,
+      "excess_return": 0.0169,
+      "win_rate": 0.5595,
+      "trading_days": 252
+    },
+    {
+      "year": 2025,
+      "return": 0.1815,
+      "volatility": 0.1537,
+      "sharpe": 1.1814,
+      "max_drawdown": -0.1487,
+      "spy_return": 0.1876,
+      "excess_return": -0.0061,
+      "win_rate": 0.5673,
+      "trading_days": 245
+    }
+  ],
+  "top_drawdowns": [
+    {
+      "peak_date": "2020-02-19 00:00:00",
+      "trough_date": "2020-03-23 00:00:00",
+      "recovery_date": "2020-11-09 00:00:00",
+      "max_drawdown": -0.2429,
+      "duration_to_trough_days": 33,
+      "duration_to_recovery_days": 264.0
+    },
+    {
+      "peak_date": "2018-09-14 00:00:00",
+      "trough_date": "2018-12-24 00:00:00",
+      "recovery_date": "2019-10-29 00:00:00",
+      "max_drawdown": -0.1836,
+      "duration_to_trough_days": 101,
+      "duration_to_recovery_days": 410.0
+    },
+    {
+      "peak_date": "2021-11-16 00:00:00",
+      "trough_date": "2022-10-14 00:00:00",
+      "recovery_date": "2023-06-12 00:00:00",
+      "max_drawdown": -0.177,
+      "duration_to_trough_days": 332,
+      "duration_to_recovery_days": 573.0
+    },
+    {
+      "peak_date": "2024-12-04 00:00:00",
+      "trough_date": "2025-04-08 00:00:00",
+      "recovery_date": "2025-08-12 00:00:00",
+      "max_drawdown": -0.1628,
+      "duration_to_trough_days": 125,
+      "duration_to_recovery_days": 251.0
+    },
+    {
+      "peak_date": "2023-08-01 00:00:00",
+      "trough_date": "2023-10-27 00:00:00",
+      "recovery_date": "2023-12-01 00:00:00",
+      "max_drawdown": -0.1003,
+      "duration_to_trough_days": 87,
+      "duration_to_recovery_days": 122.0
+    },
+    {
+      "peak_date": "2024-03-21 00:00:00",
+      "trough_date": "2024-04-17 00:00:00",
+      "recovery_date": "2024-07-11 00:00:00",
+      "max_drawdown": -0.0651,
+      "duration_to_trough_days": 27,
+      "duration_to_recovery_days": 112.0
+    },
+    {
+      "peak_date": "2024-07-31 00:00:00",
+      "trough_date": "2024-08-05 00:00:00",
+      "recovery_date": "2024-08-23 00:00:00",
+      "max_drawdown": -0.0597,
+      "duration_to_trough_days": 5,
+      "duration_to_recovery_days": 23.0
+    },
+    {
+      "peak_date": "2025-10-27 00:00:00",
+      "trough_date": "2025-11-20 00:00:00",
+      "recovery_date": "2025-11-26 00:00:00",
+      "max_drawdown": -0.0593,
+      "duration_to_trough_days": 24,
+      "duration_to_recovery_days": 30.0
+    },
+    {
+      "peak_date": "2021-09-02 00:00:00",
+      "trough_date": "2021-10-04 00:00:00",
+      "recovery_date": "2021-10-19 00:00:00",
+      "max_drawdown": -0.0487,
+      "duration_to_trough_days": 32,
+      "duration_to_recovery_days": 47.0
+    },
+    {
+      "peak_date": "2020-01-16 00:00:00",
+      "trough_date": "2020-01-31 00:00:00",
+      "recovery_date": "2020-02-05 00:00:00",
+      "max_drawdown": -0.0456,
+      "duration_to_trough_days": 15,
+      "duration_to_recovery_days": 20.0
+    }
+  ]
+}

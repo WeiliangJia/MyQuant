@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Read(//d d:/MyQuant/**)",
+      "Bash(python feature/factor_validation.py)"
+    ]
+  }
+}
